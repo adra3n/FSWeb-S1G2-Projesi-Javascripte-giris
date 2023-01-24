@@ -20,6 +20,15 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
+let surucuYasi = 17
+
+if (surucuYasi > 18){
+console.log(true)
+} 
+else 
+{
+console.log(false)
+}
 
 
 /*
@@ -34,7 +43,14 @@ Aşağıdakileri yapınız:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-
+let birinciDeger = 1
+let ikinciDeger = 1
+if (birinciDeger == ikinciDeger)
+{
+   console.log(birinciDeger);
+   birinciDeger++ ; 
+} else {
+  console.log(birinciDeger)}
 
 
 
@@ -49,8 +65,9 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
-
-
+let a = "1999"
+let b = Number(a);
+console.log(b);
 
 /*
 Görev 1d - Çarpma
@@ -61,10 +78,10 @@ Aşağıdakileri yapın:
    3. a ve b'yi çarpıp, sonucu dönün
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function carpma(a,b){
+ return a*b;
 }
-
+console.log(carpma(2,3))
 
 
 
@@ -77,10 +94,10 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function kopeginYasi(yas){
+  return yas * 7;
 }
-
+console.log("Köpeğin yaşı " + kopeginYasi(8) + " insan yaşına denktir.") 
 
 
 /* Görev 3 */
@@ -104,10 +121,39 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+function oyun(oyuncu, bilgisayar) {
+  if (oyuncu === bilgisayar) 
+  {
+    return "Beraberlik";
+  } else if 
+  (oyuncu === "Taş" && bilgisayar === "Makas" || 
+             
+  oyuncu === "Kağıt" && bilgisayar === "Taş" || 
+             
+  oyuncu === "Makas" && bilgisayar === "Kağıt") 
+             
+  {
+    return "Kazandın!";
+  } else 
+  {
+    return "Kaybettin!";
+  }
 }
 
+function seçim() {
+  let random = Math.random();
+  if (random < 0.34) {
+    return "Taş";
+  } else if(random <= 0.67) {
+    return "Kağıt";
+  } else {
+    return "Makas";
+  }
+}
+
+let bilgisayar = seçim();
+let oyuncu = "Taş";
+console.log(oyun(oyuncu, bilgisayar));
 
 
 /* Görev 4 : Metrik Dönüştürücü */
@@ -120,10 +166,9 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(km){
+  return km * 0.621371;
 }
-
 
 
 //Görev 4b - Santimetreden Feet
@@ -134,8 +179,8 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cm){
+ return cm / 30.48;
 }
 
 
@@ -153,11 +198,14 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
-}
+function cocukSarkisi(sayı){
 
+  return `${sayı} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!`
+ }
+ for (let i=5 ; i>0 ; i--)
+ {console.log(cocukSarkisi(i))}
 
+ 
 /* Görev 6 : Not Hesaplayıcı */
 
 /*
@@ -173,10 +221,23 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
-}
-
+function notHesapla(not){
+  if(not<60)
+  {
+    return "F aldın"
+  } 
+  else if(not>=60 && not<70){
+    return "D aldın"
+  }
+  else if(not>=70 && not<80){
+    return "C aldın"
+  }
+  else if(not>=80 && not<90){
+    return "B aldın"
+  }
+  else 
+    {return "A aldın"}
+  }
 
 
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
@@ -191,9 +252,18 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
-  /*buraya kodunu yazabilirsin*/
+function sesliHarfSayaci(yazi) {
+  let sesliHarfler = "aeiouAEIOU";
+  let sesliHarfSayisi = 0;
+  for (let i = 0; i < yazi.length; i++) 
+  {
+  if (sesliHarfler.includes(yazi[i])) {
+  sesliHarfSayisi++;
+  }
+  }
+  return sesliHarfSayisi; 
 }
+console.log(sesliHarfSayaci("asdasdsadssadsadsaadsa"))
 
 
 
