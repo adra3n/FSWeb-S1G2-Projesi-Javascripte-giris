@@ -66,8 +66,7 @@ Aşağıdakileri yapın:
 */
 
 let a = "1999" ;
-let b = Number(a);
-console.log(b);
+console.log(Number(a));
 
 /*
 Görev 1d - Çarpma
@@ -142,9 +141,9 @@ function oyun(oyuncu, bilgisayar) {
 
 function seçim() {
   let random = Math.random();
-  if (random < 0.33) {
+  if (random < 0.333) {
     return "Taş";
-  } else if(random <= 0.67) {
+  } else if(random <= 0.666) {
     return "Kağıt";
   } else {
     return "Makas";
