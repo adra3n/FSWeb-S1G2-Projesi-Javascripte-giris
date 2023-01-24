@@ -23,11 +23,11 @@ Aşağıdakileri yapın:
 let surucuYasi = 17
 
 if (surucuYasi > 18){
-console.log(true)
+console.log(true);
 } 
 else 
 {
-console.log(false)
+console.log(false);
 }
 
 
@@ -43,8 +43,8 @@ Aşağıdakileri yapınız:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-let birinciDeger = 1
-let ikinciDeger = 1
+let birinciDeger = 1 ;
+let ikinciDeger = 1 ;
 if (birinciDeger == ikinciDeger)
 {
    console.log(birinciDeger);
@@ -65,7 +65,7 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
-let a = "1999"
+let a = "1999" ;
 let b = Number(a);
 console.log(b);
 
@@ -81,7 +81,7 @@ Aşağıdakileri yapın:
 function carpma(a,b){
  return a*b;
 }
-console.log(carpma(2,3))
+console.log(carpma(2,3)) ;
 
 
 
@@ -97,7 +97,7 @@ Aşağıdakileri yapın:
 function kopeginYasi(yas){
   return yas * 7;
 }
-console.log("Köpeğin yaşı " + kopeginYasi(8) + " insan yaşına denktir.") 
+console.log("Köpeğin yaşı " + kopeginYasi(8) + " insan yaşına denktir.") ;
 
 
 /* Görev 3 */
@@ -122,15 +122,15 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar) {
-  if (oyuncu === bilgisayar) 
+  if (oyuncu == bilgisayar) 
   {
     return "Beraberlik";
   } else if 
-  (oyuncu === "Taş" && bilgisayar === "Makas" || 
+  ((oyuncu == "Taş" && bilgisayar == "Makas") || 
              
-  oyuncu === "Kağıt" && bilgisayar === "Taş" || 
+  (oyuncu == "Kağıt" && bilgisayar == "Taş") || 
              
-  oyuncu === "Makas" && bilgisayar === "Kağıt") 
+  (oyuncu == "Makas" && bilgisayar == "Kağıt")) 
              
   {
     return "Kazandın!";
@@ -142,7 +142,7 @@ function oyun(oyuncu, bilgisayar) {
 
 function seçim() {
   let random = Math.random();
-  if (random < 0.34) {
+  if (random < 0.33) {
     return "Taş";
   } else if(random <= 0.67) {
     return "Kağıt";
@@ -200,8 +200,10 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 
 function cocukSarkisi(sayı){
 
-  return `${sayı} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!`
- }
+  //return `${sayı} küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!`;
+  return  sayı + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
+
+ } 
  for (let i=5 ; i>0 ; i--)
  {console.log(cocukSarkisi(i))}
 
@@ -253,17 +255,18 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 
 
 function sesliHarfSayaci(yazi) {
-  let sesliHarfler = "aeiouAEIOU";
+  let sesliHarfler = "aeıioöuüAEIİOÖUÜ";
   let sesliHarfSayisi = 0;
   for (let i = 0; i < yazi.length; i++) 
   {
   if (sesliHarfler.includes(yazi[i])) {
+ // if (sesliHarfler.includes(yazi[i].toLowerCase())) {
   sesliHarfSayisi++;
   }
   }
   return sesliHarfSayisi; 
 }
-console.log(sesliHarfSayaci("asdasdsadssadsadsaadsa"))
+console.log(sesliHarfSayaci("asİÜEAdiİÖöİasdsadsÜİsadsadsaadsa"))
 
 
 
